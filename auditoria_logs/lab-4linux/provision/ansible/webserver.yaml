@@ -1,0 +1,62 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Garantindo /etc/hosts
+      lineinfile:
+        path: /etc/hosts
+        line: "{{ item }}"
+      with_items:
+        - 172.16.0.11 webserver wordpress.4labs.example chat.4labs.example
+        - 172.16.0.12 graylog
+        - 172.16.0.13 kibana kibana.4labs.example
+
+    - name: Criando diretorio /home/suporte/wordpress-deploy
+      synchronize:
+        src: files/wordpress-deploy
+        dest: /home/suporte
+
+    - name: Criando diretorio /home/suporte/rocketchat-deploy
+      synchronize:
+        src: files/rocketchat-deploy
+        dest: /home/suporte
+
+    - name: Criando diretorio /opt/filebeat
+      synchronize:
+        src: files/filebeat
+        dest: /opt
+
+    - name: Criando o arquivo syslog-tls.conf
+      copy:
+        src: files/client/syslog-tls.conf
+        dest: /opt
+        mode: 0644
+
+    - name: Adiciona o usuario vagrant no grupo docker
+      user:
+        name: vagrant
+        group: docker
+        
+    - name: Adiciona o usuario suporte no grupo docker
+      user:
+        name: suporte
+        group: docker
+
+    - name: Cria a rede traefik
+      shell: docker network create traefik
+
+    - name: Download do Docker Compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: 0755
+
+    - name: Deploy do Wordpress via Docker Compose
+      shell: /usr/local/bin/docker-compose up -d
+      args:
+        chdir: /home/suporte/wordpress-deploy
+      
+    - name: Reinicia a VM
+      command: reboot
