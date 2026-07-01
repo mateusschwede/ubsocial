@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/10/09 19:39:04.000.291,=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/10/09 19:40:33.000.226,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\exRepeticao\uRepeticao.pas</Transaction>
+    <Transaction>2020/10/09 19:40:33.000.226,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\exRepeticao\uRepeticao.dfm</Transaction>
+    <Transaction>2020/10/09 19:40:38.000.683,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\exRepeticao\prjRepeticao.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

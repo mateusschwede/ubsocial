@@ -1,0 +1,134 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 295
+  Width = 648
+  object ConexaoLoja: TFDConnection
+    Params.Strings = (
+      'Database=C:\Loja\DB\DBLOJA.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'CharacterSet=win1252'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 336
+    Top = 24
+  end
+  object tbClientes: TFDTable
+    Active = True
+    IndexFieldNames = 'CDCLIENTE'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'CLIENTES'
+    TableName = 'CLIENTES'
+    Left = 96
+    Top = 88
+    object tbClientesCDCLIENTE: TIntegerField
+      FieldName = 'CDCLIENTE'
+      Origin = 'CDCLIENTE'
+      Required = True
+    end
+    object tbClientesDCCLIENTE: TStringField
+      FieldName = 'DCCLIENTE'
+      Origin = 'DCCLIENTE'
+      Size = 30
+    end
+    object tbClientesENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 40
+    end
+    object tbClientesBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+    end
+    object tbClientesCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+    end
+    object tbClientesTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 10
+    end
+    object tbClientesCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Size = 8
+    end
+  end
+  object dsClientes: TDataSource
+    DataSet = tbClientes
+    Left = 96
+    Top = 160
+  end
+  object tbFornec: TFDTable
+    Active = True
+    IndexFieldNames = 'CDFORNECEDOR'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'FORNECEDORES'
+    TableName = 'FORNECEDORES'
+    Left = 184
+    Top = 88
+  end
+  object dsFornec: TDataSource
+    DataSet = tbFornec
+    Left = 184
+    Top = 160
+  end
+  object tbItens: TFDTable
+    Active = True
+    IndexFieldNames = 'NRVENDA;NRITEM'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'ITENS'
+    TableName = 'ITENS'
+    Left = 256
+    Top = 88
+  end
+  object dsItens: TDataSource
+    DataSet = tbItens
+    Left = 256
+    Top = 160
+  end
+  object tbProdutos: TFDTable
+    Active = True
+    IndexFieldNames = 'CDPRODUTO'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'PRODUTOS'
+    TableName = 'PRODUTOS'
+    Left = 344
+    Top = 88
+  end
+  object dsProdutos: TDataSource
+    DataSet = tbProdutos
+    Left = 344
+    Top = 160
+  end
+  object tbVendas: TFDTable
+    Active = True
+    IndexFieldNames = 'NRVENDA'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'VENDAS'
+    TableName = 'VENDAS'
+    Left = 424
+    Top = 88
+  end
+  object dsVendas: TDataSource
+    DataSet = tbVendas
+    Left = 424
+    Top = 160
+  end
+  object tbVendedores: TFDTable
+    Active = True
+    IndexFieldNames = 'CDVENDEDOR'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'VENDEDORES'
+    TableName = 'VENDEDORES'
+    Left = 504
+    Top = 88
+  end
+  object dsVendedores: TDataSource
+    DataSet = tbVendedores
+    Left = 504
+    Top = 160
+  end
+end

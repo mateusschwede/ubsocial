@@ -1,0 +1,144 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 245
+  Width = 648
+  object ConexaoLoja: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Mateus\Documents\delphi\rad\25112020\loja\DB\D' +
+        'BLOJA.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'CharacterSet=win1252'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 336
+    Top = 24
+  end
+  object tbClientes: TFDTable
+    IndexFieldNames = 'CDCLIENTE'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'CLIENTES'
+    TableName = 'CLIENTES'
+    Left = 96
+    Top = 88
+    object tbClientesCDCLIENTE: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CDCLIENTE'
+      Origin = 'CDCLIENTE'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object tbClientesDCCLIENTE: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'DCCLIENTE'
+      Origin = 'DCCLIENTE'
+      Size = 30
+    end
+    object tbClientesENDERECO: TStringField
+      DisplayLabel = 'Endere'#231'o'
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 40
+    end
+    object tbClientesBAIRRO: TStringField
+      DisplayLabel = 'Bairro'
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+    end
+    object tbClientesCIDADE: TStringField
+      DisplayLabel = 'Cidade'
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+    end
+    object tbClientesTELEFONE: TStringField
+      DisplayLabel = 'Telefone'
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      EditMask = '!\(99\) 0000-0000;0;_'
+      Size = 10
+    end
+    object tbClientesCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      EditMask = '00000\-000;0;_'
+      Size = 8
+    end
+  end
+  object dsClientes: TDataSource
+    AutoEdit = False
+    DataSet = tbClientes
+    Left = 96
+    Top = 160
+  end
+  object tbFornec: TFDTable
+    IndexFieldNames = 'CDFORNECEDOR'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'FORNECEDORES'
+    TableName = 'FORNECEDORES'
+    Left = 184
+    Top = 88
+  end
+  object dsFornec: TDataSource
+    AutoEdit = False
+    DataSet = tbFornec
+    Left = 184
+    Top = 160
+  end
+  object tbItens: TFDTable
+    IndexFieldNames = 'NRVENDA;NRITEM'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'ITENS'
+    TableName = 'ITENS'
+    Left = 584
+    Top = 88
+  end
+  object dsItens: TDataSource
+    AutoEdit = False
+    DataSet = tbItens
+    Left = 584
+    Top = 160
+  end
+  object tbProdutos: TFDTable
+    IndexFieldNames = 'CDPRODUTO'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'PRODUTOS'
+    TableName = 'PRODUTOS'
+    Left = 344
+    Top = 88
+  end
+  object dsProdutos: TDataSource
+    AutoEdit = False
+    DataSet = tbProdutos
+    Left = 344
+    Top = 160
+  end
+  object tbVendas: TFDTable
+    IndexFieldNames = 'NRVENDA'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'VENDAS'
+    TableName = 'VENDAS'
+    Left = 512
+    Top = 88
+  end
+  object dsVendas: TDataSource
+    AutoEdit = False
+    DataSet = tbVendas
+    Left = 512
+    Top = 160
+  end
+  object tbVendedores: TFDTable
+    IndexFieldNames = 'CDVENDEDOR'
+    Connection = ConexaoLoja
+    UpdateOptions.UpdateTableName = 'VENDEDORES'
+    TableName = 'VENDEDORES'
+    Left = 264
+    Top = 88
+  end
+  object dsVendedores: TDataSource
+    AutoEdit = False
+    DataSet = tbVendedores
+    Left = 264
+    Top = 160
+  end
+end

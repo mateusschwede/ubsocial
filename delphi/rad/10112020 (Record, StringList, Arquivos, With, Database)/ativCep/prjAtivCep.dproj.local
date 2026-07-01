@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/10/14 19:47:11.000.826,=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/10/27 19:12:44.000.644,=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/10 21:06:49.000.544,=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/10 21:15:45.000.740,C:\Users\Mateus\Documents\delphi\rad\10112020 (Record, StringList, Arquivos, With, Database)\ativCep\uAtivCep.pas=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/10 21:15:45.000.740,C:\Users\Mateus\Documents\delphi\rad\10112020 (Record, StringList, Arquivos, With, Database)\ativCep\uAtivCep.dfm=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/11/10 21:15:54.000.117,C:\Users\Mateus\Documents\delphi\rad\10112020 (Record, StringList, Arquivos, With, Database)\ativCep\prjAtivCep.dproj=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

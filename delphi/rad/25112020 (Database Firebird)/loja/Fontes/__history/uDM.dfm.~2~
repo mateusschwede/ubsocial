@@ -1,0 +1,59 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 428
+  Width = 714
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\Loja\DB\DBLOJA.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'CharacterSet=win1252'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 336
+    Top = 24
+  end
+  object tbClientes: TFDTable
+    Active = True
+    IndexFieldNames = 'CDCLIENTE'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'CLIENTES'
+    TableName = 'CLIENTES'
+    Left = 88
+    Top = 112
+    object tbClientesCDCLIENTE: TIntegerField
+      FieldName = 'CDCLIENTE'
+      Origin = 'CDCLIENTE'
+      Required = True
+    end
+    object tbClientesDCCLIENTE: TStringField
+      FieldName = 'DCCLIENTE'
+      Origin = 'DCCLIENTE'
+      Size = 30
+    end
+    object tbClientesENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 40
+    end
+    object tbClientesBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+    end
+    object tbClientesCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+    end
+    object tbClientesTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 10
+    end
+    object tbClientesCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Size = 8
+    end
+  end
+end

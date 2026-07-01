@@ -1,0 +1,11 @@
+1- Ligar MySQL Xampp, inserir BD, no Phpmyadmin, com código de 'banco.sql'
+2- Baixar libMysql.dll 32bits, colá-la em xampp/mysql/bin
+3- Criar projeto Delphi, inserir FDConnection e FDPhyMySQLDriverLink
+3.1- FDPhyMySQLDriverLink, propriedade VendoLib, informar url de libMysql.dll(C:\xampp\mysql\bin\libmysql.dll)
+3.2- FDConnection, 2 cliques, informar:
+(Driver ID: MySQL)
+Database: agenda
+User_Name: root
+Server: localhost
+Port: 3306
+(Recomendável clicar janela Test para verificar se há conexão com sucesso)

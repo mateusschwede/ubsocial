@@ -1,0 +1,38 @@
+unit uAtiv2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    lblRes: TLabel;
+    btnExec: TButton;
+    procedure btnExecClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnExecClick(Sender: TObject);
+var ix: Integer;
+var i: Real;
+begin
+  i := 1.00;
+  for ix := 1 to 3 do
+  begin
+    lblRes.Caption := 'Nº:' + lblRes.Caption + ' SQR:' + FloatToStr(sqr(i)) + ' CUBO:' + FloatToStr(sqr(i)*i) + ' SQRT: ' + FloatToStr(sqrt(i)) + ' | ';
+  end;
+end;
+
+end.

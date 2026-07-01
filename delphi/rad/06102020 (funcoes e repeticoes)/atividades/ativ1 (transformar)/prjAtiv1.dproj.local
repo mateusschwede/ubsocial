@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/10/14 11:05:15.000.708,=C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/10/14 11:15:27.000.874,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\atividades\ativ1 (transformar)\uAtiv1.pas</Transaction>
+    <Transaction>2020/10/14 11:15:27.000.874,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\atividades\ativ1 (transformar)\uAtiv1.dfm</Transaction>
+    <Transaction>2020/10/14 11:15:33.000.408,C:\Users\Mateus\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Mateus\Documents\delphi\rad\06102020 (funcoes e repeticoes)\atividades\ativ1 (transformar)\prjAtiv1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

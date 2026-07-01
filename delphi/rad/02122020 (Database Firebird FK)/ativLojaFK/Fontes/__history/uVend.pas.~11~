@@ -1,0 +1,77 @@
+unit uVend;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.Buttons;
+
+type
+  TfrmVend = class(TForm)
+    pVend2: TPanel;
+    pVend: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    DBText1: TDBText;
+    DBNavigator1: TDBNavigator;
+    btInserir: TBitBtn;
+    btEditar: TBitBtn;
+    btExcluir: TBitBtn;
+    btCancelar: TBitBtn;
+    btConfirmar: TBitBtn;
+    btSair: TBitBtn;
+    procedure btInserirClick(Sender: TObject);
+    procedure btEditarClick(Sender: TObject);
+    procedure btExcluirClick(Sender: TObject);
+  private
+    { Private declarations }
+    Procedure TrataBotoes;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmVend: TfrmVend;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM;
+
+{ TfrmVend }
+
+procedure TfrmVend.btEditarClick(Sender: TObject);
+begin
+  TrataBotoes;
+  dm.tbVendedores.Edit;
+end;
+
+procedure TfrmVend.btExcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Excluir?',mtConfirmation,[mbYes,mbNo],0) = mrYes then Dm.tbVendedores.Delete;
+end;
+
+procedure TfrmVend.btInserirClick(Sender: TObject);
+var prox: Integer;
+begin
+  TrataBotoes;
+  Dm.tbVendedores.Last;
+  prox := Dm.tbVendedores.FieldByName('cdvendedor').asInteger+1;
+  Dm.tbVendedores.Append;
+  Dm.tbVendedores.fieldbyname('cdvendedor').asinteger := prox;
+end;
+
+procedure TfrmVend.TrataBotoes;
+begin
+  btInserir.Enabled := not btInserir.Enabled;
+  btEditar.Enabled := not btEditar.Enabled;
+  btExcluir.Enabled := not btExcluir.Enabled;
+  btConfirmar.Enabled := not btConfirmar.Enabled;
+  btCancelar.Enabled := not btCancelar.Enabled;
+  DBNavigator1.Enabled := not DBNavigator1.Enabled;
+end;
+
+end.

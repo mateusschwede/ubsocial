@@ -1,0 +1,16 @@
+﻿[lblCor]
+Coordinates=10,10,49,58
+
+[btnVerde]
+Coordinates=159,10,67,58
+
+[btnVermelho]
+Coordinates=10,78,87,58
+Visible=True
+
+[btnAmarelo]
+Coordinates=69,10,80,58
+
+[]
+Coordinates=168,87,91,36
+

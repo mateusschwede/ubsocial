@@ -1,0 +1,66 @@
+========== ATALHOS ==========
+F12: Tela / Editor de código
+SHIFT+F12: Abre janela forms
+CNTRL+F21: “units”
+F11: “object inspector”
+Cntrl+d: identação
+
+========== EXECUTAR ==========
+1-Salva tudo  ctrl + shift + s
+2-Compila ctrl + f9
+3-Roda F9
+
+Criar novo projeto: new > Windows VCL Application
+Abrir Projetos Antigos: File > Reopen   //Tem que abrir o projeto > .dproj
+
+========== Propriedades ==========
+Usuário não pode alterar: caption
+Usuário pode alterar: text
+
+========== Conversões ==========
+v := Real; //Var Real
+n1 := StrToFloat(EdN1.Text); //String para Float
+lbRes.Caption := FloatToStr(r); //Float para String
+
+========== PROJETO ==========
+Criar pasta do Projeto, ddmmyy
+Salva Unit: Fontes - uNome
+No Delphi Save Project As > Salva Pasta do projeto(salva fora de APP,DCU e Fontes) - prjNome
+DCU Project/options: Output Directory(APP) UnitOutput(DCU) - Delphi Compiler
+
+Executável gerado: PastaProjeto > win64 > debug > application. Esse será enviado ao cliente
+Abrir: Sempre abrir o projeto pronto no prjNomeProjeto.dproj
+
+=== Enviar Zip do Projeto ===
+Enviar somente:
+- Delphi Form
+- Delphi Source File
+- Delphi Project File (2 arquivos)
+- Arquivo RES (se possui img)
+
+========== COMPONENTES DO PROJETO ==========
+name: btnClicar
+caption/text(user pd alterar)/texthint: descrição no elemento
+event: onclick… 
+
+ÁREA DE VARIÁVEIS GLOBAIS: Colocar abaixo do var
+VAR LOCAIS: var i : integer; //depois do procedure, antes do begin //dentro do begin, atribuir  i := 3;
+
+========== VALOR DE FORMULÁRIO ==========
+(Sempre é String, precisa converter e desconverter)
+n1 := StrToInt(EdN1.Text);
+res := n1+n2;
+lblRes.Caption := IntToStr(res);  //ou lblRes.Caption := IntToStr(StrToInt(EdN1.Text)+(StrToInt(edN2.Text)));
+
+COMENTÁRIO: // Linha   e   { } ou {* *} Bloco
+
+========== EXEMPLO DE CÓDIGO EM EVENTO ==========
+procedure TForm1.btnDividirClick(Sender: TObject);
+var n1,n2,res : Real;
+begin
+  n1 := StrToFloat(edN1.Text);
+  n2 := StrToFloat(edN1.Text);
+  res := n1/n2;
+  lblMult.Caption := IntToStr(res);
+ listBox.Clear; //limpa listBox
+End;

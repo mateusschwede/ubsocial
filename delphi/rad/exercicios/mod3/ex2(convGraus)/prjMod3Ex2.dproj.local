@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/09/22 20:55:32.000.563,=C:\Users\mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/09/22 21:03:05.000.447,C:\Users\mateus\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\mateus\Documents\delphi\exercicios\mod3\ex2(converterGraus)\uMod3Ex2.pas</Transaction>
+    <Transaction>2020/09/22 21:03:05.000.447,C:\Users\mateus\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\mateus\Documents\delphi\exercicios\mod3\ex2(converterGraus)\uMod3Ex2.dfm</Transaction>
+    <Transaction>2020/09/22 21:03:12.000.695,C:\Users\mateus\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\mateus\Documents\delphi\exercicios\mod3\ex2(converterGraus)\prjMod3Ex2.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

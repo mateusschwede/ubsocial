@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/03/14 20:00:34.000.902,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2019/04/10 20:13:38.000.978,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2019/05/07 18:22:35.000.739,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/04/29 14:25:15.000.145,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/09/15 18:51:10.000.830,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/09/22 20:52:03.000.025,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/09/29 15:48:05.000.274,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/10/20 18:41:30.000.104,=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/10/20 19:40:39.000.895,C:\Meus Projetos Delphi\20102020\uSkins.dfm=C:\Meus Projetos Delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/10/20 19:40:39.000.895,C:\Meus Projetos Delphi\20102020\uSkins.pas=C:\Meus Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/10/20 19:40:45.000.427,C:\Meus Projetos Delphi\20102020\prjSkins.dproj=C:\Meus Projetos Delphi\Project1.dproj</Transaction>
+    <Transaction>2020/10/20 20:47:21.000.612,=C:\Meus Projetos Delphi\20102020\ABOUT.pas</Transaction>
+    <Transaction>2020/10/20 20:47:42.000.932,C:\Meus Projetos Delphi\20102020\uSobre.pas=C:\Meus Projetos Delphi\20102020\ABOUT.pas</Transaction>
+    <Transaction>2020/10/20 20:47:42.000.932,C:\Meus Projetos Delphi\20102020\uSobre.dfm=C:\Meus Projetos Delphi\20102020\ABOUT.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
