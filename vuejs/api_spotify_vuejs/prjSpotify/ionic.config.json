@@ -1,0 +1,7 @@
+{
+  "name": "prjSpotify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
