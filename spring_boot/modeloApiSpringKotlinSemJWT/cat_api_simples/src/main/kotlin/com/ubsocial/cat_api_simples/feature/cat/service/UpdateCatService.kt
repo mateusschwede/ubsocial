@@ -22,7 +22,7 @@ class UpdateCatService(
 
         val cat = catRepository.findById(id)
             .orElseThrow {
-                ResourceNotFoundException("Cat not found with id: $id")
+                ResourceNotFoundException("Gato não encontrado com id: $id")
             }
 
         cat.name = catUtils.normalizeName(request.name)
@@ -30,7 +30,6 @@ class UpdateCatService(
         cat.age = request.age
 
         val updatedCat = catRepository.save(cat)
-
         return catMapper.toResponse(updatedCat)
     }
 }

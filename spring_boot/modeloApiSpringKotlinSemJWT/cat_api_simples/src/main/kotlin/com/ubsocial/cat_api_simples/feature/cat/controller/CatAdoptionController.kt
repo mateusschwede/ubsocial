@@ -21,19 +21,16 @@ class CatAdoptionController(
         @PathVariable id: Long,
         @Valid @RequestBody request: AdoptCatRequest
     ): ResponseEntity<CatResponse> {
-
         return ResponseEntity.ok(
             adoptCatService.execute(id, request)
         )
     }
-
 
     @DeleteMapping("/{id}/adoption")
     fun removeAdoption(
         @PathVariable id: Long,
         @RequestBody request: RemoveAdoptionRequest
     ): ResponseEntity<CatResponse> {
-
         return ResponseEntity.ok(
             removeAdoptionService.execute(id, request)
         )

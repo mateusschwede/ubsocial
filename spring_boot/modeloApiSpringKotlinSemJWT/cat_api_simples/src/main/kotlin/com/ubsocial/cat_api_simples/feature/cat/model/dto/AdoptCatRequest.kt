@@ -4,6 +4,6 @@ import jakarta.validation.constraints.NotBlank
 
 data class AdoptCatRequest(
 
-    @field:NotBlank(message = "Adopter name is required.")
+    @field:NotBlank(message = "Nome do adotante não pode ser nulo ou vazio")
     val adopterName: String
 )

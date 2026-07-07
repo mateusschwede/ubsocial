@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component
 
 @Component
 class CatMapper {
-
     fun toResponse(entity: CatEntity): CatResponse =
         CatResponse(
             id = entity.id!!,

@@ -28,50 +28,40 @@ class CatController(
     fun create(
         @Valid @RequestBody request: CreateCatRequest
     ): ResponseEntity<CatResponse> {
-
         return ResponseEntity
             .status(HttpStatus.CREATED)
             .body(createCatService.execute(request))
     }
-
 
     @PutMapping("/{id}")
     fun update(
         @PathVariable id: Long,
         @Valid @RequestBody request: UpdateCatRequest
     ): ResponseEntity<CatResponse> {
-
         return ResponseEntity.ok(
             updateCatService.execute(id, request)
         )
     }
 
-
     @DeleteMapping("/{id}")
     fun delete(
         @PathVariable id: Long
     ): ResponseEntity<Void> {
-
         deleteCatService.execute(id)
-
         return ResponseEntity.noContent().build()
     }
-
 
     @GetMapping("/{id}")
     fun findById(
         @PathVariable id: Long
     ): ResponseEntity<CatResponse> {
-
         return ResponseEntity.ok(
             getCatService.execute(id)
         )
     }
 
-
     @GetMapping
     fun findAll(): ResponseEntity<List<CatSummaryResponse>> {
-
         return ResponseEntity.ok(
             listCatService.execute()
         )

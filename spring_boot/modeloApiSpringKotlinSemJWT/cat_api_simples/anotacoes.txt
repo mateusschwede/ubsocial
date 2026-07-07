@@ -101,7 +101,7 @@ Executar teste SQL: SELECT USER FROM DUAL;
 5.1. Deverá retornar: CATAPI
 
 
-3. Codificar application.properties, com informações de conexão com banco de dados Oracle
+3. Codificar src/main/resources/application.properties, com informações de conexão com banco de dados Oracle
 
 4. src/main/kotlin/com/ubsocial/cat_api_simples/exception/BusinessException.kt
 5. src/main/kotlin/com/ubsocial/cat_api_simples/exception/ResourceNotFoundException.kt

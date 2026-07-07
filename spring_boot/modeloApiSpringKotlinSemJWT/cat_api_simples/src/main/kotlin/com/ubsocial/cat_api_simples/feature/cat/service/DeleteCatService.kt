@@ -13,7 +13,7 @@ class DeleteCatService(
 
         val cat = catRepository.findById(id)
             .orElseThrow {
-                ResourceNotFoundException("Cat not found with id: $id")
+                ResourceNotFoundException("Gato não encontrado com id: $id")
             }
 
         catRepository.delete(cat)

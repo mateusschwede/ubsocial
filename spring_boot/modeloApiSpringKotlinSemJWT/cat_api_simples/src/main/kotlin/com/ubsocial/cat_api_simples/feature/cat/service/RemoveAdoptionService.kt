@@ -23,7 +23,7 @@ class RemoveAdoptionService(
 
         val cat = catRepository.findById(id)
             .orElseThrow {
-                ResourceNotFoundException("Cat not found with id: $id")
+                ResourceNotFoundException("Gato não encontrado com id: $id")
             }
 
         catValidator.validateAdopted(cat)
@@ -32,7 +32,6 @@ class RemoveAdoptionService(
         cat.status = CatStatus.AVAILABLE
 
         val updatedCat = catRepository.save(cat)
-
         return catMapper.toResponse(updatedCat)
     }
 }

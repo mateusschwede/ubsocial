@@ -11,7 +11,6 @@ class CorsConfig {
 
     @Bean
     fun corsFilter(): CorsFilter {
-
         val configuration = CorsConfiguration().apply {
             allowedOriginPatterns = listOf("*")
             allowedMethods = listOf("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
@@ -22,7 +21,6 @@ class CorsConfig {
 
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", configuration)
-
         return CorsFilter(source)
     }
 }

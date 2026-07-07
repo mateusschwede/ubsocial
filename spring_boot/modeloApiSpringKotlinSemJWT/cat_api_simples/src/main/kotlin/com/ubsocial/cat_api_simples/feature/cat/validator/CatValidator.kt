@@ -10,13 +10,13 @@ class CatValidator {
 
     fun validateAvailableForAdoption(cat: CatEntity) {
         if (cat.status == CatStatus.ADOPTED) {
-            throw BusinessException("Cat is already adopted.")
+            throw BusinessException("Gato já foi adotado")
         }
     }
 
     fun validateAdopted(cat: CatEntity) {
         if (cat.status != CatStatus.ADOPTED) {
-            throw BusinessException("Cat is not adopted.")
+            throw BusinessException("Gato não foi adotado")
         }
     }
 }

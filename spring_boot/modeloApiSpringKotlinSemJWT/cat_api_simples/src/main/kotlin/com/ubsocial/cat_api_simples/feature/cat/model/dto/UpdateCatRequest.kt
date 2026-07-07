@@ -5,12 +5,12 @@ import jakarta.validation.constraints.NotBlank
 
 data class UpdateCatRequest(
 
-    @field:NotBlank(message = "Cat name is required.")
+    @field:NotBlank(message = "Nome do gato é obrigatório")
     val name: String,
 
-    @field:NotBlank(message = "Cat breed is required.")
+    @field:NotBlank(message = "Raça do gato é obrigatória")
     val breed: String,
 
-    @field:Min(value = 0, message = "Cat age must be greater than or equal to zero.")
+    @field:Min(value = 0, message = "Idade do gato deve ser maior ou igual a zero")
     val age: Int
 )

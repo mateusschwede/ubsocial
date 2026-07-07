@@ -12,7 +12,6 @@ class ListCatService(
 ) {
 
     fun execute(): List<CatSummaryResponse> {
-
         return catRepository.findAll()
             .map(catMapper::toSummaryResponse)
     }

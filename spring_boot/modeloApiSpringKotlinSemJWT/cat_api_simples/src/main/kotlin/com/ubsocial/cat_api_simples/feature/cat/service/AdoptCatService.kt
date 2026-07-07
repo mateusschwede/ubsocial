@@ -22,7 +22,7 @@ class AdoptCatService(
 
         val cat = catRepository.findById(id)
             .orElseThrow {
-                ResourceNotFoundException("Cat not found with id: $id")
+                ResourceNotFoundException("Gato não encontrado com id: $id")
             }
 
         catValidator.validateAvailableForAdoption(cat)
@@ -31,7 +31,6 @@ class AdoptCatService(
         cat.status = com.ubsocial.cat_api_simples.feature.cat.model.enums.CatStatus.ADOPTED
 
         val adoptedCat = catRepository.save(cat)
-
         return catMapper.toResponse(adoptedCat)
     }
 }

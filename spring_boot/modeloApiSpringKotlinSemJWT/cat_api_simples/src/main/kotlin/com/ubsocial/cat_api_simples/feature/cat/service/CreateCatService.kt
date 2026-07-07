@@ -16,7 +16,6 @@ class CreateCatService(
 ) {
 
     fun execute(request: CreateCatRequest): CatResponse {
-
         val cat = CatEntity(
             name = catUtils.normalizeName(request.name),
             breed = request.breed,
@@ -24,7 +23,6 @@ class CreateCatService(
         )
 
         val savedCat = catRepository.save(cat)
-
         return catMapper.toResponse(savedCat)
     }
 }

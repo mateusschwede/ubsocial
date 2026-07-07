@@ -16,7 +16,7 @@ class GetCatService(
 
         val cat = catRepository.findById(id)
             .orElseThrow {
-                ResourceNotFoundException("Cat not found with id: $id")
+                ResourceNotFoundException("Gato não encontrado com id: $id")
             }
 
         return catMapper.toResponse(cat)
