@@ -1,0 +1,177 @@
+cat_api_simples
+├── build.gradle.kts
+├── settings.gradle.kts
+└── src
+    └── main
+        ├── kotlin
+        │   └── com
+        │       └── ubsocial
+        │           └── cat_api_simples
+        │               ├── Application.kt
+        │               ├── config
+        │               │   └── CorsConfig.kt
+        │               ├── exception
+        │               │   ├── BusinessException.kt
+        │               │   ├── ResourceNotFoundException.kt
+        │               │   ├── ErrorResponse.kt
+        │               │   └── GlobalExceptionHandler.kt
+        │               └── feature
+        │                   └── cat
+        │                       ├── controller
+        │                       │   ├── CatController.kt
+        │                       │   └── CatAdoptionController.kt
+        │                       ├── mapper
+        │                       │   └── CatMapper.kt
+        │                       ├── model
+        │                       │   ├── dto
+        │                       │   │   ├── CreateCatRequest.kt
+        │                       │   │   ├── UpdateCatRequest.kt
+        │                       │   │   ├── AdoptCatRequest.kt
+        │                       │   │   ├── RemoveAdoptionRequest.kt
+        │                       │   │   ├── CatResponse.kt
+        │                       │   │   └── CatSummaryResponse.kt
+        │                       │   ├── entity
+        │                       │   │   └── CatEntity.kt
+        │                       │   └── enums
+        │                       │       └── CatStatus.kt
+        │                       ├── repository
+        │                       │   └── CatRepository.kt
+        │                       ├── service
+        │                       │   ├── CatService.kt
+        │                       │   ├── CreateCatService.kt
+        │                       │   ├── UpdateCatService.kt
+        │                       │   ├── DeleteCatService.kt
+        │                       │   ├── GetCatService.kt
+        │                       │   ├── ListCatService.kt
+        │                       │   ├── AdoptCatService.kt
+        │                       │   └── RemoveAdoptionService.kt
+        │                       ├── validator
+        │                       │   └── CatValidator.kt
+        │                       └── utils
+        │                           └── CatUtils.kt
+        └── resources
+            └── application.properties
+
+
+1. Gerar projeto em https://start.spring.io:
+Project: Gradle - Kotlin
+Language: kotlin
+Spring Boot: 4.1.0
+Project Metadata:
+Group: com.ubsocial
+Artifact: cat_api_simples
+Package name: com.ubsocial.cat_api_simples
+Packaging: Jar
+Configuration: Properties
+Java: 25
+Dependencies: Spring Web, Spring Data JPA, Validation, Oracle Driver
+
+2. Criar container Oracle Database:
+docker pull container-registry.oracle.com/database/free:latest
+docker run -d --name oracle-db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=SenhaForte123 container-registry.oracle.com/database/free:latest
+
+Driver: Oracle
+Connection Type: Service Name
+Hostname: localhost
+Port: 1521
+Service: FREEPDB1
+Driver: Thin
+Authentication: User & Password
+User: system
+Password: SenhaForte123
+Testar conexão, e confirmar
+
+Criar usuário e senha para o projeto (executar 1 linha por vez):
+CREATE USER catapi IDENTIFIED BY "CatApi@123";
+GRANT CONNECT TO catapi;
+GRANT RESOURCE TO catapi;
+GRANT CREATE SESSION TO catapi;
+GRANT CREATE TABLE TO catapi;
+GRANT CREATE VIEW TO catapi;
+GRANT CREATE SEQUENCE TO catapi;
+GRANT CREATE TRIGGER TO catapi;
+GRANT CREATE PROCEDURE TO catapi;
+GRANT UNLIMITED TABLESPACE TO catapi;
+
+Conectar com usuário criado (mesmas configurações acima, mas com usuário e senha criados):
+Usuário: catapi
+Senha: CatApi@123
+
+Executar teste SQL: SELECT USER FROM DUAL;
+5.1. Deverá retornar: CATAPI
+
+
+3. Codificar application.properties, com informações de conexão com banco de dados Oracle
+
+4. src/main/kotlin/com/ubsocial/cat_api_simples/exception/BusinessException.kt
+5. src/main/kotlin/com/ubsocial/cat_api_simples/exception/ResourceNotFoundException.kt
+6. src/main/kotlin/com/ubsocial/cat_api_simples/exception/ErrorResponse.kt
+7. src/main/kotlin/com/ubsocial/cat_api_simples/exception/GlobalExceptionHandler.kt
+
+8. src/main/kotlin/com/ubsocial/cat_api_simples/config/CorsConfig.kt
+
+9. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/enums/CatStatus.kt
+10. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/entity/CatEntity.kt
+
+11. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/CreateCatRequest.kt
+12. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/UpdateCatRequest.kt
+13. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/AdoptCatRequest.kt
+14. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/RemoveAdoptionRequest.kt
+15. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/CatResponse.kt
+16. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/model/dto/CatSummaryResponse.kt
+
+17. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/repository/CatRepository.kt
+
+18. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/mapper/CatMapper.kt
+
+19. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/validator/CatValidator.kt
+
+20. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/utils/CatUtils.kt
+
+21. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/CatService.kt
+22. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/CreateCatService.kt
+23. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/UpdateCatService.kt
+24. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/DeleteCatService.kt
+25. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/GetCatService.kt
+26. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/ListCatService.kt
+27. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/AdoptCatService.kt
+28. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/service/RemoveAdoptionService.kt
+
+29. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/controller/CatController.kt
+30. src/main/kotlin/com/ubsocial/cat_api_simples/feature/cat/controller/CatAdoptionController.kt
+
+
+31. Executar projeto: .\gradlew bootRun
+32. Testar listagem de gatos (GET): http://localhost:8080/cats
+
+33. No Postman, adicionar gato (POST): http://localhost:8080/cats
+Body (raw JSON):
+{
+    "name": "Mingau",
+    "breed": "Persa",
+    "age": 3
+}
+
+34. Testar visualizar gato específico (GET): http://localhost:8080/cats/1
+
+35. No Postman, editar gato (PUT): http://localhost:8080/cats
+Body (raw JSON):
+{
+    "name": "Mingau ATUALIZADO",
+    "breed": "Persa",
+    "age": 3
+}
+
+36. No Postman, adotar gato específico (PATCH): http://localhost:8080/cats/1/adoption
+Body (raw JSON):
+{
+    "adopterName": "Mateus"
+}
+
+37. No Postman, remover adoção de gato específico (DELETE): http://localhost:8080/cats/1/adoption
+Body (raw JSON):
+{
+    "reason": "Adotante desistiu da adoção"
+}
+
+38. No Postman, remover gato específico (DELETE): http://localhost:8080/cats/1
