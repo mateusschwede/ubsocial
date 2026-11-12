@@ -1,0 +1,94 @@
+<div class="container">
+    <h1>Painel de Chamadas</h1>
+
+    <div id="main">Nenhuma chamada no momento</div>
+    <div id="history"></div>
+
+    <div class="status">
+        <div class="status-indicator" id="connection-status"></div>
+        <span id="status-text">Conectando...</span>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.6.1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.5.0/bundles/stomp.umd.min.js"></script>
+
+<script>
+    const main = document.getElementById("main");
+    const historyElement = document.getElementById("history");
+    const historyList = [];
+    const statusIndicator = document.getElementById("connection-status");
+    const statusText = document.getElementById("status-text");
+
+    // Configuração STOMP + SockJS
+    const client = new StompJs.Client({
+
+        webSocketFactory: () => new SockJS('/ws'),
+        reconnectDelay: 5000,
+
+        onConnect: (frame) => {
+            console.log('Conectado ao WebSocket:', frame);
+            statusIndicator.classList.add('connected');
+            statusText.textContent = 'Conectado';
+
+            // Inscrição no tópico de chamadas
+            client.subscribe('/topic/calls', (message) => {
+                const call = JSON.parse(message.body);
+                const callText = `Paciente: ${call.name} - Consultório: ${call.room}`;
+
+                // Histórico
+                historyList.unshift(callText);
+
+                if (historyList.length > 5) {
+                    historyList.pop();
+                }
+
+                main.replaceChildren(); // Atualiza chamada principal
+
+                const name = document.createElement('div');
+                name.textContent = `Paciente: ${call.name}`;
+
+                const room = document.createElement('div');
+                room.textContent = `Consultório: ${call.room}`;
+
+                main.append(name, room);
+                main.classList.add('active');
+
+                historyElement.replaceChildren(); // Atualiza histórico
+
+                historyList.forEach(item => {
+                    const div = document.createElement('div');
+                    div.textContent = item;
+                    historyElement.appendChild(div);
+                });
+
+                setTimeout(() => {
+                    main.classList.remove('active');
+                }, 2000);
+            });
+        },
+
+        onDisconnect: () => {
+            console.log('WebSocket desconectado');
+            statusIndicator.classList.remove('connected');
+            statusText.textContent = 'Desconectado';
+        },
+
+        onStompError: (frame) => {
+            console.error('Erro STOMP:', frame.headers['message']);
+            console.error('Detalhes:', frame.body);
+        },
+
+        onWebSocketError: (event) => {
+            console.error('Erro WebSocket:', event);
+        },
+
+        onWebSocketClose: (event) => {
+            console.warn('Conexão WebSocket encerrada:', event.code);
+            statusIndicator.classList.remove('connected');
+            statusText.textContent = 'Reconectando...';
+        }
+    });
+
+    client.activate(); // Inicia conexão
+</script>
