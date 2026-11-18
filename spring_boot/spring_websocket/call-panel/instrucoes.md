@@ -55,12 +55,14 @@ Controller acessa Service, Service acessa Repository, Repository acessa BD
 - Criar service 'CallService'
 - Criar controller 'CallController'
 
-## 4. Testar endpoints (Postman):
-- Adicionar call (POST): http://localhost:8080/calls com Body Raw JSON: {"name": "Call 1", "room": "Room 1"}
-
-## 5. Configurar Websocket:
+## 4. Configurar Websocket:
 - Criar classe 'WebSocketConfig' no pacote config
 - Criar página HTML 'index.html' no diretório resources/static
+
+## 5. Construir projeto
+- Construir projeto (terminal): .\gradlew clean build
+- Executar servidor Gradle: .\gradlew bootRun
+- Verificar criação do banco de dados no SGBD
 
 ## 6. Testar Websocket:
 - Abrir página HTML no browser: http://localhost:8080
